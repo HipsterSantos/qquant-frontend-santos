@@ -1,0 +1,158 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+
+  .toolbar {
+    flex: 3;
+    width: inherit;
+  }
+  header {
+    flex: 3;
+    widows: 100%;
+  }
+  .main-content {
+    flex: 5;
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+    .info>.search>p{
+      font-size: 20pt;
+      input{
+        border: none;
+        border: 1.4px solid rgb(173, 173, 173);
+        border-radius: .4em;
+        width: 288px;
+        padding: 1em;
+      }
+    }
+  }
+
+  .table {
+    .table-holder {
+      h4{
+        font-family: gotham-bold;
+        font-size: 30pt !important;
+      }
+      ul{
+        margin: 0;
+      }
+      .grid-4-col > ul {
+        background: rgb(86, 86, 236);
+        padding: 1em;
+        border-radius:.3em;
+        font-family: gotham-bold;
+        font-weight: bold;
+        color: #fff;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+      }
+
+      .grid-items-4-col {
+        height: 500px;
+        overflow: scroll;
+        ul {
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(4, 2fr);
+          grid-auto-rows: 3fr;
+          background: rgb(255, 255, 255);
+          font-family: gotham-medium;
+          padding: 2em;
+          box-shadow: 1px 3px 16px rgba(0, 0, 0, 0.178);
+          border-radius: .6em;
+          margin-bottom: 1em;
+          transition: all ease-out .3s;
+        }
+        ul:hover{
+          transform: scale(.99);
+        }
+      }
+
+      .grid-footer-3-col{
+        ul{
+          list-style: none;
+           display: grid;
+           grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 1fr;
+            background: rgb(86, 86, 236);
+            padding: 1em;
+          border-radius:.3em;
+          font-family: gotham-bold;
+          color: #fff;
+        font-weight: bold;
+.proximo,.limite,.anterior{cursor: pointer;}
+        .proximo{
+          padding-left: 10em;
+        }
+        .limite>input{
+            border:none;
+            border: 2px solid #fff;
+            border-radius: .4em;
+            padding: .3em;
+            background: transparent;
+            color:#fff;
+            outline: none;
+            font-weight: bold;
+
+        }
+        }
+
+      }
+    }
+
+  }
+
+}
+
+.modal{
+  position: absolute;
+  z-index: 20;
+  animation: 5s ease-in infinite animes;
+  left: 30vw;
+  transition:all ease-out .2s;
+  right:0;
+  top: -40em;
+  box-shadow: 1px 6px 14px rgba(0, 0, 0, .6);
+  display: flex;
+  width: 600px;
+  height: 500px;
+  border-radius: .4em;
+  padding: 1em;
+  flex-direction: column;
+  background: linear-gradient(40deg,rgb(55, 86, 189) ,rgb(0, 255, 149) );
+  color: #fff;
+  font-family: gotham-medium;
+    .inner-content{
+      padding: 2em;
+      .item{
+        display: flex;
+        flex-direction: row;
+        .previous{
+         padding-top: 3em;
+         padding-right: 2em;
+         padding-bottom: auto;
+        }
+        .next{
+          padding-top: 3em;
+         padding-left: 2em;
+         padding-bottom: auto;
+        }
+        }
+      }
+      .close{
+        position: relative;
+        left:570px;
+        top:0;
+        bottom:0;
+        right:0;
+      }
+
+  }
+@keyframes animes{
+  0%,100%{
+    transform:scale(.99);
+  }
+}

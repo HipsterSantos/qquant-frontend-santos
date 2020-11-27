@@ -1,0 +1,93 @@
+
+<div class="main-container">
+
+
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+  <span>Qquant</span>
+    <div class="spacer"></div>
+    <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
+      <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <rect width="400" height="400" fill="none"/>
+        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#fff"/>
+      </svg>
+    </a>
+</div>
+<header style="margin-top: 5em">
+
+</header>
+<div class="main-content">
+  <div class="info">
+    <h3>Qquant Dashboard</h3>
+    <div class="search">
+      <p>Pesquise items aqui <input on type="text" (input)="autoSearch()" [(ngModel)]="toSearch" placeholder="pesquise por items"></p>
+
+    </div>
+  </div>
+
+  <div class="table">
+   <h4> Ongoing Data </h4>
+    <div class="table-holder">
+      <div class="grid-4-col">
+          <ul>
+            <li>Author</li>
+            <li>Title</li>
+            <li>Doi</li>
+            <li>Year</li>
+          </ul>
+     </div>
+     <div class="grid-items-4-col">
+        <ul class="headlines" *ngFor="let i of  initData;let key = index" (click)="showInfo(i)">
+          <li>{{i.author}}</li>
+          <li>{{i.title}}</li>
+          <li>{{i.doi}}</li>
+          <li>{{i.year}}</li>
+        </ul>
+     </div>
+     <div class="grid-footer-3-col">
+       <ul>
+         <li class="anterior" (click)="previousElement()"> < Anterior </li>
+         <li>Total {{limite}}-700</li>
+         <li>
+          <p class="limite">Limite &nbsp; &nbsp;<input type="number" [value]="limite" min="0" max="800"></p>
+         </li>
+         <li class="proximo" (click)="nextElement()">Proximo ></li>
+       </ul>
+     </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+<div class="modal" #modal>
+  <div class="close" (click)="desapear()">
+    <h1>X</h1>
+  </div>
+
+  <div class="inner-content">
+    <h1>Item Selecionado</h1>
+     <div class="item">
+
+         <div class="content" *ngIf='!unhide'>
+          <h3>Author</h3>
+          <p>{{singleData.author}}</p>
+          <h3>Title</h3>
+          <p>{{singleData.title}}</p>
+          <h3>Doi</h3>
+          <p>{{singleData.doi}}</p>
+          <h3>year</h3>
+          <p>{{singleData.year}}</p>
+        </div>
+
+   </div>
+  </div>
+
+</div>
