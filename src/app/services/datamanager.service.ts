@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, tap } from 'rxjs/operators';
-import { Forums } from './forums.model';
+import { Forums } from '../models/forums.model';
 @Injectable({
   providedIn: 'root'
 })
